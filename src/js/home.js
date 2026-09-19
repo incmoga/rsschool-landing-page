@@ -1,0 +1,3 @@
+import '../styles/base.css';
+import '../styles/common.css';
+import '../styles/home.css';
