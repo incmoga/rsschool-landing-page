@@ -1,0 +1,11 @@
+/*=== container ===*/
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    padding-inline: var(--container-padding);
+    margin-inline: auto;
+
+    @media (max-width: 767px) {
+        padding-inline: 16px;
+    }
+}
