@@ -1,5 +1,4 @@
 /*fonts*/
-
 @font-face {
     font-family: 'Inter';
     src:
@@ -19,7 +18,6 @@
 }
 
 /* reset */
-
 *,
 *::before,
 *::after {
@@ -95,4 +93,97 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: inherit;
+}
+
+/* typography variables */
+:root {
+    --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    /* Desktop & Tablet (768+) */
+    --fs-h1: 72px;
+    --fs-h2: 60px;
+    --fs-h3: 24px;
+    --fs-body: 16px;
+    --fs-caption: 10px;
+    --fs-action: 16px;
+    --fs-burger: 32px;
+
+    --lh-h1: 1.05;
+    --lh-h2: 1.25;
+    --lh-h3: 1.25;
+    --lh-body: 1.5;
+    --lh-caption: 1.4;
+    --lh-action: 1.5;
+    --lh-burger: 1.25;
+
+    --fw-regular: 400;
+    --fw-semibold: 600;
+}
+
+/* Mobile*/
+@media (max-width: 767px) {
+    :root {
+        --fs-h1: 42px;
+        --fs-h2: 32px;
+        --lh-h1: 1.15;
+    }
+}
+
+/* base */
+body {
+    font-family: var(--font-main);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body);
+}
+
+/* typography utilities */
+.h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-h1);
+}
+
+.h1--accent {
+    font-style: italic;
+}
+
+.h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-h2);
+}
+
+.h2--accent {
+    font-style: italic;
+}
+
+.h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-h3);
+}
+
+.body {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body);
+}
+
+.caption {
+    font-size: var(--fs-caption);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-caption);
+}
+
+.action {
+    font-size: var(--fs-action);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-action);
+}
+
+.burger-link {
+    font-size: var(--fs-burger);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-burger);
 }
