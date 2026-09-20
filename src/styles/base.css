@@ -120,7 +120,7 @@ h6 {
     --fw-semibold: 600;
 }
 
-/* Mobile*/
+/* mobile*/
 @media (max-width: 767px) {
     :root {
         --fs-h1: 42px;
@@ -135,6 +135,13 @@ body {
     font-size: var(--fs-body);
     font-weight: var(--fw-regular);
     line-height: var(--lh-body);
+
+    color: var(--text-primary);
+    background-color: var(--bg-page);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 /* typography utilities */
@@ -186,4 +193,51 @@ body {
     font-size: var(--fs-burger);
     font-weight: var(--fw-semibold);
     line-height: var(--lh-burger);
+}
+
+/*=== colors variables ===*/
+/* primitive colors */
+:root {
+    --color-brown-900: #292826;
+    --color-brown-700: #403F3D;
+    --color-brown-500: #665F55;
+    --color-beige-300: #C1B6AD;
+    --color-beige-100: #E1D4C9;
+    --color-accent: #B0907A;
+    --color-overlay-light: rgb(64 63 61 / 0.8);
+    --color-overlay-dark: rgb(41 40 38 / 0.8);
+}
+
+/*=== themes semantic tokens ===*/
+/* light theme (default)*/
+:root,
+[data-theme='light'] {
+    color-scheme: light;
+
+    --text-primary: var(--color-brown-700);
+    --text-inverse: var(--color-beige-100);
+    --text-accent: var(--color-accent);
+
+    --bg-page: var(--color-beige-100);
+    --bg-container: var(--color-brown-500);
+    --bg-overlay: var(--color-overlay-light);
+
+    --border-primary: var(--color-beige-300);
+    --border-inverse: var(--color-brown-500);
+}
+
+/* dark theme */
+[data-theme='dark'] {
+    color-scheme: dark;
+
+    --text-primary: var(--color-beige-100);
+    --text-inverse: var(--color-beige-100);
+    --text-accent: var(--color-accent);
+
+    --bg-page: var(--color-brown-900);
+    --bg-container: var(--color-brown-700);
+    --bg-overlay: var(--color-overlay-dark);
+
+    --border-primary: var(--color-brown-500);
+    --border-inverse: var(--color-beige-300);
 }
