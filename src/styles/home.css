@@ -1,0 +1,56 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.hero__wrapper {
+    border-radius: 40px;
+    padding: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__video {
+    position: absolute;
+    inset: 0;
+    /* top/right/bottom/left: 0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ключевое — не искажает пропорции */
+    z-index: -2;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 530px;
+}
+
+.hero__title {
+    color: var(--text-inverse);
+}
+
+.hero__title span {
+    color: var(--text-accent);
+}
+
+.hero__sub-title {
+    color: var(--text-inverse);
+}
+
+.hero__btn {
+    padding: 20px 70px;
+    background-color: var(--text-inverse);
+    border-radius: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hero__btn img {
+    display: none;
+}
