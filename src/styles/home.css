@@ -165,3 +165,50 @@
     align-items: center;
     text-align: center;
 }
+
+
+/* section about */
+.about {}
+
+.about__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about__title {}
+
+.about__title span {
+    color: var(--text-accent);
+}
+
+.about__image-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.about__col--left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about__col--right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about__img {}
+
+.about__img--top img {
+    border-radius: 20px;
+    max-height: 430px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about__img--bottom img {
+    border-radius: 20px;
+    max-height: 590px;
+}
