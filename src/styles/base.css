@@ -1,0 +1,255 @@
+/*fonts*/
+@font-face {
+    font-family: 'Inter';
+    src:
+        url('../assets/fonts/Inter-VariableFont_opsz\,wght.woff2') format('woff2 supports variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src:
+        url('../assets/fonts/Inter-Italic-VariableFont_opsz\,wght.woff2') format('woff2 supports variations');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* typography variables */
+:root {
+    --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    /* desktop, tablet */
+    --fs-h1: 72px;
+    --fs-h2: 60px;
+    --fs-h3: 24px;
+    --fs-body: 16px;
+    --fs-caption: 10px;
+    --fs-action: 16px;
+    --fs-burger: 32px;
+
+    --lh-h1: 1.05;
+    --lh-h2: 1.25;
+    --lh-h3: 1.25;
+    --lh-body: 1.5;
+    --lh-caption: 1.4;
+    --lh-action: 1.5;
+    --lh-burger: 1.25;
+
+    --fw-regular: 400;
+    --fw-semibold: 600;
+}
+
+/* mobile*/
+@media (max-width: 767px) {
+    :root {
+        --fs-h1: 42px;
+        --fs-h2: 32px;
+        --lh-h1: 1.15;
+    }
+}
+
+/* base */
+body {
+    font-family: var(--font-main);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body);
+
+    color: var(--text-primary);
+    background-color: var(--bg-page);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+/* layout varibles */
+:root {
+    --container-max: 1440px;
+    --container-padding: 40px;
+}
+
+@media (max-width: 767px) {
+    :root {
+        --container-padding: 16px;
+    }
+}
+
+/* typography utilities */
+.h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-h1);
+}
+
+.h1--accent {
+    font-style: italic;
+}
+
+.h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-h2);
+}
+
+.h2--accent {
+    font-style: italic;
+}
+
+.h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-h3);
+}
+
+.body {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body);
+}
+
+.caption {
+    font-size: var(--fs-caption);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-caption);
+}
+
+.action {
+    font-size: var(--fs-action);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-action);
+}
+
+.burger-link {
+    font-size: var(--fs-burger);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-burger);
+}
+
+/*=== colors variables ===*/
+/* primitive colors */
+:root {
+    --color-brown-900: #292826;
+    --color-brown-700: #403F3D;
+    --color-brown-500: #665F55;
+    --color-beige-300: #C1B6AD;
+    --color-beige-100: #E1D4C9;
+    --color-accent: #B0907A;
+    --color-overlay-light: rgb(64 63 61 / 0.8);
+    --color-overlay-dark: rgb(41 40 38 / 0.8);
+}
+
+/*=== themes semantic tokens ===*/
+/* light theme (default)*/
+:root,
+[data-theme='light'] {
+    color-scheme: light;
+
+    --text-primary: var(--color-brown-700);
+    --text-inverse: var(--color-beige-100);
+    --text-accent: var(--color-accent);
+
+    --bg-page: var(--color-beige-100);
+    --bg-container: var(--color-brown-500);
+    --bg-overlay: var(--color-overlay-light);
+
+    --border-primary: var(--color-beige-300);
+    --border-inverse: var(--color-brown-500);
+}
+
+/* dark theme */
+[data-theme='dark'] {
+    color-scheme: dark;
+
+    --text-primary: var(--color-beige-100);
+    --text-inverse: var(--color-beige-100);
+    --text-accent: var(--color-accent);
+
+    --bg-page: var(--color-brown-900);
+    --bg-container: var(--color-brown-700);
+    --bg-overlay: var(--color-overlay-dark);
+
+    --border-primary: var(--color-brown-500);
+    --border-inverse: var(--color-beige-300);
+}
